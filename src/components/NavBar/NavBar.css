@@ -1,0 +1,40 @@
+nav {
+    background-color: #002D59;
+    color: #fff;
+    margin-bottom: 40px;
+}
+
+nav .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.logo {
+    color: black
+}
+
+
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    margin: 0;
+}
+
+.nav-item {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.nav-link {
+    display: block;
+    color: black;
+    padding: 10px;
+}
+
+.nav-link:hover {
+    background-color: gold;
+}
+
+
