@@ -10,14 +10,14 @@ class NewCarContainer extends React.Component {
         horsepower: '',
     };
     
-    handleChange = (event) => {
-        // console.log(event.target.id);
-        if (event.targe.value === 'on') {
-            event.target.value = true;
-        }
+    // handleChange = (event) => {
+    //     console.log(event.target.id);
+    //     if (event.targe.value === 'on') {
+    //         event.target.value = true;
+    //     }
 
-        this.setState({[event.target.name]: event.target.value})
-    };
+    //     this.setState({[event.target.name]: event.target.value})
+    // };
 
     handleSubmit = (event) => {
         event.preventDefault();
@@ -31,11 +31,11 @@ class NewCarContainer extends React.Component {
     render() {
         return (
             <div>
-                <h2>Add A New Car</h2>
+                
                 <form onSubmit={this.handleSubmit}>
-                    <h2>Add a New Car</h2>
+                    <h2>Add A New Car</h2>
                     <div>
-                        <label htmlFor="">carPhotoUrl</label>
+                        <label htmlFor="">Photo</label>
                         <input onInput={this.handleChange} type="text" name="carPhotoUrl"/>
                     </div>
                     <div>

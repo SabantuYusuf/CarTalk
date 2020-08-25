@@ -16,7 +16,13 @@ function NavBar(props) {
                     <NavLink className='nav-link' to='/cars'>Cars</NavLink>
                 </li>
                 <li className='nav-item'>
-                    <NavLink className='nav-link' to='/car/new'>Add Car</NavLink>
+                    <NavLink className='nav-link' to='/cars/new'>Add Car</NavLink>
+                </li>
+                <li className='nav-item'>
+                    <NavLink className='nav-link' to='/register'>Register</NavLink>
+                </li>
+                <li className='nav-item'>
+                    <NavLink className='nav-link' to='/login'>Login</NavLink>
                 </li>
             </ul>
         </div>

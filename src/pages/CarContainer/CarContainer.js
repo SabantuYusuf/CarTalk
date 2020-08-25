@@ -10,7 +10,7 @@ class CarContainer extends React.Component {
 
     componentDidMount() {
         // Get all Cars
-        CarModel.getById(this.props.match.params.id)
+        CarModel.getCarById(this.props.match.params.id)
             .then((result) => {
                 console.log( result);
                 this.setState({car: result})

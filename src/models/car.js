@@ -1,4 +1,4 @@
-const url = `http://localhost:4000/api/v1/cars`
+const url = `http://localhost:4001/api/v1/carTalk`
 
 class CarModel {
     static getAllCars =() => {

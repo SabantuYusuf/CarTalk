@@ -6,10 +6,12 @@ import './Car.css';
 function Car(props) {
     const { car, list } = props;
     return(
+        
         <Link to={`/cars/{${car._id}}`}>
+            <div><h1>Add New Car</h1></div>
             <div className='car-card'>
                 <section className='image-wrapper'>
-                    <img src={Car.carPhotoUrl} alt={car.name} height='100' />
+                    <img src={car.carPhotoUrl} alt={car.name} height='100' />
                 </section>
                 <section className='content-wrapper'>
                     <h4>{car.name}</h4>

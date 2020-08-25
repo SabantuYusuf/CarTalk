@@ -13,7 +13,7 @@ class CarListContainer extends React.Component {
         CarModel.getAllCars()
             .then((result) => {
                 // console.log(result);
-            this.setState({cars: result});
+            this.setState({car: result});
             })
             .catch((err) => console.log(err))
     };
@@ -22,5 +22,7 @@ class CarListContainer extends React.Component {
         return <CarsList cars={this.state.cars} />
     };
 };
+
+
 
 export default CarListContainer;
