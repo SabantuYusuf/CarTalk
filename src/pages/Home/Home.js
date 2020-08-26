@@ -1,4 +1,5 @@
 import React from 'react';
+import { Carousel } from 'antd';
 
 const Home = () => {
     return (
@@ -9,3 +10,4 @@ const Home = () => {
 };
 
 export default Home;
+

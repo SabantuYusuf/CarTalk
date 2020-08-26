@@ -8,7 +8,7 @@ class CarModel {
 
     static getCarById = (carId) => {
         return fetch(`${url}/${carId}`)
-            .then((response) => response.json)
+            .then((response) => response.json())
     }
 
     static createCar = (car) => {
@@ -20,6 +20,27 @@ class CarModel {
             body: JSON.stringify(car)
         })
             .then((response) => response.json())
+    }
+
+    static updateCar = (car, id) => {
+        return fetch(`${url}/${id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(car)
+        })
+        .then((response) => response.json())
+    }
+
+    static deleteCar= (id) => {
+        return fetch(`${url}/${id}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        })
+        .then((response) => response.json())
     }
 };
 

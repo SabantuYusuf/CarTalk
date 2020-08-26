@@ -3,23 +3,24 @@ import Car from '../../components/Car/Car';
 import CarModel from '../../models/car';
 
 class CarContainer extends React.Component {
-    static = {
+    state = {
         car: {},
     };
     
 
     componentDidMount() {
-        // Get all Cars
+        // Get one Cars
         CarModel.getCarById(this.props.match.params.id)
             .then((result) => {
-                console.log( result);
-                this.setState({car: result})
+                console.log(result);
+                this.setState({car: result.car})
             })
             .catch((err) => console.log(err))
     }
+    
     render() {
         console.log(this.props);
-        return <Car car={this.state.car} list={false}/>
+        return <Car car={this.state.car} list={false} />
     };
 };
 

@@ -12,8 +12,8 @@ class CarListContainer extends React.Component {
         // Gett all Cars
         CarModel.getAllCars()
             .then((result) => {
-                // console.log(result);
-            this.setState({car: result});
+                console.log(result.cars);
+            this.setState({cars: result.cars});
             })
             .catch((err) => console.log(err))
     };
