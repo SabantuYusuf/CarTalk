@@ -16,6 +16,7 @@ class CarModel {
             method:'POST',
             headers: {
                 'Content-Type': 'application/json', 
+                'authorization': localStorage.getItem('token'),
             },
             body: JSON.stringify(car)
         })
@@ -27,6 +28,7 @@ class CarModel {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
+                'authorization': localStorage.getItem('token'),
             },
             body: JSON.stringify(car)
         })
@@ -38,6 +40,7 @@ class CarModel {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
+                'authorization': localStorage.getItem('token'),
             },
         })
         .then((response) => response.json())

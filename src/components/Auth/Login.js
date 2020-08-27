@@ -16,26 +16,33 @@ class Login extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        axios.post(`${process.env.REACT_APP_API}/auth/login`, this.state)
+        axios.post(`${process.env.REACT_APP_API}/api/v1/auth/login`, this.state)
             .then((res) => {
                 console.log(res);
-                this.process.setCurrentUser(res.data.token);
-                this.props.history.push('cars');
+                localStorage.setItem('token', res.data.token);
+                // this.props.setCurrentUser(res.data.token);
+                this.props.history.push('/cars');
+            })
+            .catch((err) => {
+                console.log(err);
+                // console.log(err.response.data);
+                // console.log(err.response.data.message);
             });
     };
 
     render () {
+        console.log(this.props);
         return (
             <form onSubmit={this.handleSubmit}>
                 <div className="form-group">
-                    <label htmlFor="name">Email</label>
+                    <label htmlFor="email">Email</label>
                     <input onChange={this.handleChange} type="email" id="email" name="email" value={this.state.email}/>
                 </div>
                 <div className="form-group">
-                    <label htmlFor="name">Password</label>
+                    <label htmlFor="password">Password</label>
                     <input onChange={this.handleChange} type="password" id="password" name="password" value={this.state.password}/>
                 </div>
-                <button className="loginbtn">Login</button>
+                <button className="loginbtn" type="submit">Login</button>
             </form>
         )
     }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { WithRouter } from 'react-router-dom';
+import {  withRouter } from 'react-router-dom';
 import axios from 'axios';
 
 class Register extends Component {
@@ -19,7 +19,7 @@ class Register extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        axios.post(`${process.env.REACT_APP_API}/auth/register`, this.state)
+        axios.post(`${process.env.REACT_APP_API}/api/v1/auth/register`, this.state)
             .then((res) => {
                 console.log(res);
                 this.props.history.push('/login')
@@ -40,12 +40,12 @@ class Register extends Component {
                     <input onChange={this.handleChange} type="text" id="username" name="username" value={this.state.username}/>
                 </div>
                 <div className="form-group">
-                    <label htmlFor="firstname"> First Name</label>
-                    <input onChange={this.handleChange} type="text" id="firstname" name="firstname" value={this.state.firstname}/>
+                    <label htmlFor="firstName"> First Name</label>
+                    <input onChange={this.handleChange} type="text" id="firstName" name="firstName" value={this.state.firstName}/>
                 </div>
                 <div className="form-group">
-                    <label htmlFor="lastname"> Last Name</label>
-                    <input onChange={this.handleChange} type="text" id="lastname" name="lastname" value={this.state.lastname}/>
+                    <label htmlFor="lastName"> Last Name</label>
+                    <input onChange={this.handleChange} type="text" id="lastName" name="lastName" value={this.state.lastName}/>
                 </div>
                 <div className="form-group">
                     <label htmlFor="email"> Email</label>
@@ -55,10 +55,10 @@ class Register extends Component {
                     <label htmlFor="password"> Password</label>
                     <input onChange={this.handleChange} type="text" id="password" name="password" value={this.state.password}/>
                 </div>
-                <button className="registerbtn">Register</button>
+                <button className="registerbtn" type="submit">Register</button>
             </form>
         )
     }
 };
 
-export default Register;
+export default withRouter(Register);

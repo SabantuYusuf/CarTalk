@@ -1,5 +1,6 @@
 import React from 'react';
 import CarModel from '../../models/car';
+import { withRouter } from 'react-router-dom';
 
 class NewCarContainer extends React.Component {
     state = {
@@ -10,14 +11,14 @@ class NewCarContainer extends React.Component {
         horsepower: '',
     };
     
-    // handleChange = (event) => {
-    //     console.log(event.target.id);
-    //     if (event.targe.value === 'on') {
-    //         event.target.value = true;
-    //     }
+    handleChange = (event) => {
+        // console.log(event.target.id);
+        if (event.targe.value === 'on') {
+            event.target.value = true;
+        }
 
-    //     this.setState({[event.target.name]: event.target.value})
-    // };
+        this.setState({[event.target.name]: event.target.value})
+    };
 
     handleSubmit = (event) => {
         event.preventDefault();
@@ -25,13 +26,13 @@ class NewCarContainer extends React.Component {
             .then((result) => {
                 console.log(result);
             });
+        // Redirect to History/index
         this.props.history.push('/cars');
     }
 
     render() {
         return (
             <div>
-                
                 <form onSubmit={this.handleSubmit}>
                     <h2>Add A New Car</h2>
                     <div>
@@ -39,7 +40,7 @@ class NewCarContainer extends React.Component {
                         <input onInput={this.handleChange} type="text" name="carPhotoUrl"/>
                     </div>
                     <div>
-                        <label htmlFor="">name</label>
+                        <label htmlFor="">Name</label>
                         <input onInput={this.handleChange} type="text" name="name"/>
                     </div>
                     <div>
@@ -47,11 +48,11 @@ class NewCarContainer extends React.Component {
                         <input onInput={this.handleChange} type="text" name="year"/>
                     </div>
                     <div>
-                        <label htmlFor="">model</label>
+                        <label htmlFor="">Model</label>
                         <input onInput={this.handleChange} type="text" name="model"/>
                     </div>
                     <div>
-                        <label htmlFor="">horsepower</label>
+                        <label htmlFor="">Horsepower</label>
                         <input onInput={this.handleChange} type="text" name="horsepower"/>
                     </div>
                     <button type="submit">Add Car</button>
@@ -61,4 +62,4 @@ class NewCarContainer extends React.Component {
     };
 };
 
-export default NewCarContainer;
+export default withRouter(NewCarContainer);
