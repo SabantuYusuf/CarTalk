@@ -1,0 +1,9 @@
+.newcar-input {
+    width: 50%;
+}
+
+.wrap {
+	max-width: 1000px;
+	width: 100%;
+	margin: 0 auto;
+}

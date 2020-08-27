@@ -19,9 +19,9 @@ class Login extends Component {
         axios.post(`${process.env.REACT_APP_API}/api/v1/auth/login`, this.state)
             .then((res) => {
                 console.log(res);
-                localStorage.setItem('token', res.data.token);
-                // this.props.setCurrentUser(res.data.token);
-                this.props.history.push('/cars');
+            
+                this.props.setCurrentUser(res.data.token);
+                // this.props.history.push('/cars');
             })
             .catch((err) => {
                 console.log(err);

@@ -1,10 +1,15 @@
 import React from 'react';
 
+import './Home.css';
+
 function Home() {
     return (
-        <div>
-            <h2>Welcome to Car Talk</h2>
-        </div>
+        <header className="vertical-center">
+            <div>
+                <h1><a href="#"></a>CAR TALK</h1>
+                <h2>VINTAGE CAR COLLECTION</h2>
+            </div>
+        </header>
     );
 };
 

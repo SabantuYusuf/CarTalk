@@ -1,28 +1,33 @@
+import axios from 'axios';
 const url = `http://localhost:4001/api/v1/carTalk`
 
+
 class CarModel {
+    // All cars
     static getAllCars =() => {
         return fetch(url)
             .then((response) => response.json())
     }
 
+
+    // Car show
     static getCarById = (carId) => {
         return fetch(`${url}/${carId}`)
             .then((response) => response.json())
     }
 
-    static createCar = (car) => {
-        return fetch(url, {
-            method:'POST',
-            headers: {
-                'Content-Type': 'application/json', 
-                'authorization': localStorage.getItem('token'),
-            },
-            body: JSON.stringify(car)
+
+    // Add car
+    static createCar = (car, token) => {
+        // console.log('this is the', token)
+        // console.log('this is', token)
+        return axios.post(url, car, {
+            
+            
         })
-            .then((response) => response.json())
     }
 
+    // Edit car
     static updateCar = (car, id) => {
         return fetch(`${url}/${id}`, {
             method: 'PUT',
@@ -35,6 +40,7 @@ class CarModel {
         .then((response) => response.json())
     }
 
+    // Delete car
     static deleteCar= (id) => {
         return fetch(`${url}/${id}`, {
             method: 'DELETE',

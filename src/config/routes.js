@@ -10,16 +10,49 @@ import Register from '../components/Auth/Register';
 import EditCarContainer from '../pages/EditGameContainer/EditCarContainer';
 
 
+// export default ({ currentUser, setCurrentUser}) => (
+//     <Switch>
+//         <Route exact path='/'  component={Home} /> 
+
+//         <Route path='/cars/new' render={() => 
+//             currentUser
+//                 ? <NewCarContainer />
+//                 : <Redirect to='/login' />
+//         } />
+
+
+//         <Route exact path='/cars/:id' component={CarContainer} />
+
+//         <Route path='/cars/:id/edit' component={EditCarContainer} />
+
+//         <Route path='/cars' component={CarsListContainer} />
+        
+//         <Route path='/login' render={() => <Login setCurrentUser={setCurrentUser} />} />
+
+//         <Route path='/register' component={Register} />
+
+//     </Switch>
+// );
+
+
+
+
+
+
+
+
 export default ({ currentUser, setCurrentUser}) => (
     <Switch>
         <Route exact path='/'  component={Home} /> 
 
         <Route path='/cars/new' render={() => 
             currentUser
-                ? <NewCarContainer />
+                ? <NewCarContainer currentUser={currentUser}/>
                 : <Redirect to='/login' />
         } />
 
+
+        
 
         <Route exact path='/cars/:id' component={CarContainer} />
 
@@ -33,7 +66,6 @@ export default ({ currentUser, setCurrentUser}) => (
 
     </Switch>
 );
-
 
 // export default (
 //     <Switch>

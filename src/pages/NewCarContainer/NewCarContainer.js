@@ -2,6 +2,9 @@ import React from 'react';
 import CarModel from '../../models/car';
 import { withRouter } from 'react-router-dom';
 
+import './NewCarContainer.css';
+
+
 class NewCarContainer extends React.Component {
     state = {
         carPhotoUrl: '',
@@ -13,47 +16,54 @@ class NewCarContainer extends React.Component {
     
     handleChange = (event) => {
         // console.log(event.target.id);
-        if (event.targe.value === 'on') {
-            event.target.value = true;
-        }
+        // if (event.targe.value === 'on') {
+        //     event.target.value = true;
+        // }
 
         this.setState({[event.target.name]: event.target.value})
     };
 
-    handleSubmit = (event) => {
+    handleSubmit = async (event) => {
+        console.log(this.props.currentUser);
         event.preventDefault();
-        CarModel.createCar(this.state)
-            .then((result) => {
-                console.log(result);
-            });
-        // Redirect to History/index
-        this.props.history.push('/cars');
+        try {
+            const carData = await CarModel.createCar(this.state, this.props.currentUser)
+            if (carData) {
+                // Redirect to History/index
+                this.props.history.push('/cars');
+            }
+        } catch (error) {
+            console.log(error)
+        }
+        
+        
     }
 
     render() {
+        
         return (
-            <div>
-                <form onSubmit={this.handleSubmit}>
+            <div className="wrap">
+                <form onSubmit={this.handleSubmit} className="car-form">
                     <h2>Add A New Car</h2>
                     <div>
                         <label htmlFor="">Photo</label>
-                        <input onInput={this.handleChange} type="text" name="carPhotoUrl"/>
+                        <input onInput={this.handleChange} type="text" name="carPhotoUrl" placeholder="Car Photo" className="newcar-input"/>
                     </div>
                     <div>
                         <label htmlFor="">Name</label>
-                        <input onInput={this.handleChange} type="text" name="name"/>
+                        <input onInput={this.handleChange} type="text" name="name" placeholder="Name" className="newcar-input"/>
                     </div>
                     <div>
                         <label htmlFor="">Year</label>
-                        <input onInput={this.handleChange} type="text" name="year"/>
+                        <input onInput={this.handleChange} type="text" name="year" placeholder="Year" className="newcar-input"/>
                     </div>
                     <div>
                         <label htmlFor="">Model</label>
-                        <input onInput={this.handleChange} type="text" name="model"/>
+                        <input onInput={this.handleChange} type="text" name="model" placeholder="Car Model" className="newcar-input"/>
                     </div>
                     <div>
                         <label htmlFor="">Horsepower</label>
-                        <input onInput={this.handleChange} type="text" name="horsepower"/>
+                        <input onInput={this.handleChange} type="text" name="horsepower" placeholder="Horsepower" className="newcar-input"/>
                     </div>
                     <button type="submit">Add Car</button>
                 </form>

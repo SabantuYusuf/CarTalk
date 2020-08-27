@@ -4,44 +4,11 @@ import jwt_decode from 'jwt-decode';
 // import routes from './config/routes';
 import Routes from './config/routes';
 import NavBar from './components/NavBar/NavBar';
-import './App.css';
+import Landing from './components/Landing';
+import Footer from './components/Footer';
 import setAuthHeader from './utils/setAuthHeader';
 
-// class App extends React.Component {
-//   state = {
-//     currentUser: '',
-//   };
-
-//   setCurrentUser = (token) => {
-//     // Store Token
-//     // Set Auth Header
-//     //Decode Token
-//     // Set State
-//   };
-
-//   logout =() => {
-//     // Remove Token
-//     // Remove Auth Header
-//     // Set State
-//     // Redirect
-//   };
-
-//   render() {
-//     return(
-//       <React.Fragment>
-//         <NavBar />
-//         <div className="container">
-//           { routes }
-//         </div>
-//       </React.Fragment>
-//     );
-//   };
-// };
-
-
-
-
-
+import './App.css';
 
 
 class App extends React.Component {
@@ -55,9 +22,9 @@ class App extends React.Component {
       // set Auth Header
       setAuthHeader(token);
       // Decone Toke
-      const decodeToken = jwt_decode(token);
+      const decodedToken = jwt_decode(token);
       // Set state
-      this.setState({currentUser: decodeToken.id})
+      this.setState({currentUser: decodedToken.id})
     }
   }
 
@@ -67,9 +34,9 @@ class App extends React.Component {
       // Set Auth Header
       setAuthHeader(token);
       //Decode Token
-      const decodeToken = jwt_decode(token);
+      const decodedToken = jwt_decode(token);
       // Set State
-      this.setState({currentUser: decodeToken.id})
+      this.setState({currentUser: decodedToken.id})
     }
 
   logout =() => {
@@ -86,22 +53,18 @@ class App extends React.Component {
   render() {
     return (
       <React.Fragment>
+        
         <NavBar currentUser={this.state.currentUser} logout={this.logout} />
+        <Landing />
         <div className="container">
-          <Routes currentUser={this.state.currentUser} set currentUser={this.setCurrentUser} />
+          <Routes currentUser={this.state.currentUser} setCurrentUser={this.setCurrentUser} />
         </div>
+        <Footer />
+        
       </React.Fragment>
     )
   };
 };
 
 
-
-
-
-
-
-
-
-// export default App;
 export default withRouter(App);

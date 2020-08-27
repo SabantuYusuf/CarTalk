@@ -1,25 +1,44 @@
-nav {
-    /* background-color: #002D59; */
-    /* color: #fff; */
-    margin-bottom: 40px;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500&family=Noto+Sans+SC:wght@500&display=swap');
+h2 {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+nav {    
+    margin-bottom: 400px;
+    position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
 }
 
 nav .container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+	background-color:rgb(29, 25, 25);
+    z-index: 100;
+    text-transform: uppercase;
+    letter-spacing: 0.80px;
+    letter-spacing: .05rem;
+    padding: .2rem 4rem;
 }
 
 .logo {
-    color: black
+    color: rgb(235, 223, 223)
 }
 
-
+header {
+	padding-top: 30px;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
 
 .nav-list {
+    font-family: 'Noto Sans KR', sans-serif;
     list-style: none;
     display: flex;
     margin: 0;
+    text-align: center;
 }
 
 .nav-item {
@@ -28,9 +47,12 @@ nav .container {
 }
 
 .nav-link {
+    font-family: 'Source Sans Pro', sans-serif;
     display: block;
-    color: black;
-    padding: 10px;
+    color: rgb(245, 231, 231);
+    padding: 15px;
+    /* color: inherit; */
+    text-decoration: inherit;
 }
 
 .nav-link:hover {

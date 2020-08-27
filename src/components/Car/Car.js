@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import CarModel from '../../models/car';
+import Like from '../Like/Like'
 
 import './Car.css';
 
-function Car(props) {
+function Car (props) {
     const { car, list } = props;
 
     const handleDelete = () => {
@@ -15,28 +16,30 @@ function Car(props) {
 
     return(
         <>
-            <div className="car-link">
-                <Link  to={`/cars/{${car._id}}`}>
-                    <div className='car-card'>
-                        <section className='image-wrapper'>
-                            <img src={car.carPhotoUrl} alt={car.name} />
-                        </section>
-                        <section className='content-wrapper'>
-                            <h4>{car.name}</h4>
-                            {!list && (
-                                <div className='car-card-cation'>
-                                    <p><strong>Year</strong>{car.year}</p>
-                                    <p><strong>Model</strong>{car.model}</p>
-                                    <p><strong>Horsepower</strong>{car.horsepower}</p>
-                                    <Link to={`/cars/${car._id}}/edit`}>Eidt</Link>
-                                    <button className='delete' onClick={handleDelete}>Delete</button>
-                                </div>
-                            )}
-                        </section>
-                        
-                    </div>
-                </Link>
+            <div className="car-card" style={!list ? {margin: '0 auto'}: {}}>
+                {/* <Link  to={`/cars/{${car._id}}`}> */}
+                    {/* <div className='car-card'> */}
+                <section className='image-wrapper'>
+                    <img src={car.carPhotoUrl} alt={car.name} />
+                </section>
+                <section className='car-name'>
+                    <h4 className="name">{car.name}</h4>
+                </section>
             </div>
+                        {/* </div> */}
+            {!list && (
+                <div className='car-card-action'>
+                    {/* <img src={car.carPhotoUrl} alt={car.name} /> */}
+                    <p><strong>Year</strong>{car.year}</p>
+                    <p><strong>Model</strong>{car.model}</p>
+                    <p><strong>Horsepower</strong>{car.horsepower}</p>
+                    <button className='like'>Like </button>
+                    <Link to={`/cars/${car._id}}/edit`} ><button className="edit">Edit</button></Link>
+                    <button className='delete' onClick={handleDelete}>Delete</button>
+                </div>
+            )}
+                {/* </Link> */}
+            
         </>
     );
 };

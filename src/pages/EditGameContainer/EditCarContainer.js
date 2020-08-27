@@ -43,13 +43,11 @@ class EditCarContainer extends React.Component {
             <div>
                 <form onSubmit={this.handleSubmit}>
                     <h2>Edit Car</h2>
-                    <div>
                         <label htmlFor="name">Photo</label>
-                        <input type="text" name="carPhotoUrl" id="carPhotoUrl" value={this.state.carPhotoUrl} onChange={this.handleChange} />
-                    </div>
+                        <input type="text" placeholder="car.carPhotoUrl" name="carPhotoUrl" id="carPhotoUrl" value={carPhotoUrl} onChange={this.handleChange} />
                     <div>
                         <label htmlFor="name">Name</label>
-                        <input type="text" name="name" id="name" value={this.state.name} onChange={this.handleChange} />
+                        <input type="text" name="name" id="name" value={name} onChange={this.handleChange} />
                     </div>
                     <div>
                         <label htmlFor="name">Year</label>
