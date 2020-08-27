@@ -21,10 +21,7 @@ class CarModel {
     static createCar = (car, token) => {
         // console.log('this is the', token)
         // console.log('this is', token)
-        return axios.post(url, car, {
-            
-            
-        })
+        return axios.post(url, car, {})
     }
 
     // Edit car
@@ -42,14 +39,7 @@ class CarModel {
 
     // Delete car
     static deleteCar= (id) => {
-        return fetch(`${url}/${id}`, {
-            method: 'DELETE',
-            headers: {
-                'Content-Type': 'application/json',
-                'authorization': localStorage.getItem('token'),
-            },
-        })
-        .then((response) => response.json())
+        return axios.delete(`${url}/${id}`, {})
     }
 };
 
