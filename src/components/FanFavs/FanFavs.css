@@ -1,0 +1,43 @@
+.hold-cars {
+    display: center;
+    column-count: 3;
+	width: 100%;
+	margin: 64px 100 100;
+	margin: 4rem 10 2rem;
+    padding-bottom: 0;
+    align-items: center;
+    margin: 0 auto;
+    /* width: 200px;
+    height: 120px; */
+}
+
+img {
+    height: 100%;
+}
+.hold-cars img {
+    cursor: pointer;
+	-webkit-transition: all .3s ease-in-out;
+	transition: all .3s ease-in-out;
+    margin-bottom: 2rem;
+    margin-right: 2rem;
+    width: 90%;
+}
+
+h2, h3{
+    color: wheat;
+    font-size: 40px;
+    letter-spacing: .2rem;
+}
+.hold-cars img:hover {
+    opacity: .7;
+}
+
+#gallery {
+	padding-bottom: 0;
+}
+
+@media only screen and (max-width: 560px) {
+	.hold-cars {
+		column-count: 3;
+	}
+}

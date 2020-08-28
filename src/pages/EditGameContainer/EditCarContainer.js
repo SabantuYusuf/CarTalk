@@ -1,6 +1,7 @@
 import React from 'react';
 import CarModel from '../../models/car';
-// import { Result } from 'antd';
+
+import './EditCar.css';
 
 class EditCarContainer extends React.Component {
     state = {
@@ -51,25 +52,28 @@ class EditCarContainer extends React.Component {
 
         return (
             <div>
-                <form onSubmit={this.handleSubmit}>
+                <form onSubmit={this.handleSubmit} className="edit-form">
                     <h2>Edit Car</h2>
+                    <div>
                         <label htmlFor="name">Photo</label>
-                        <input type="text" name="carPhotoUrl" id="carPhotoUrl" value={carPhotoUrl} onChange={this.handleChange} />
+                        <input type="text" name="carPhotoUrl" id="carPhotoUrl" value={carPhotoUrl} onChange={this.handleChange} className="editcar-input" />
+                    </div>
+                        
                     <div>
                         <label htmlFor="name">Name</label>
-                        <input type="text" name="name" id="name" value={name} onChange={this.handleChange} />
+                        <input type="text" name="name" id="name" value={name} onChange={this.handleChange} className="editcar-input" />
                     </div>
                     <div>
                         <label htmlFor="name">Year</label>
-                        <input type="text" name="year" id="year" value={year} onChange={this.handleChange} />
+                        <input type="text" name="year" id="year" value={year} onChange={this.handleChange} className="editcar-input" />
                     </div>
                     <div>
                         <label htmlFor="name">Model</label>
-                        <input type="text" name="model" id="model" value={model} onChange={this.handleChange} />
+                        <input type="text" name="model" id="model" value={model} onChange={this.handleChange} className="editcar-input" />
                     </div>
                     <div>
                         <label htmlFor="name">horsepower</label>
-                        <input type="text" name="horsepower" id="horsepower" value={horsepower} onChange={this.handleChange} />
+                        <input type="text" name="horsepower" id="horsepower" value={horsepower} onChange={this.handleChange} className="editcar-input" />
                     </div>
                     <button type="submit">Update Car</button>
                 </form>

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500&family=Noto+Sans+SC:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 h2 {
     font-family: 'Source Sans Pro', sans-serif;
 }
@@ -15,22 +16,28 @@ nav .container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-	background-color:rgb(29, 25, 25);
-    z-index: 100;
+	background-color: rgb(38, 36, 36);
+    /* z-index: 100; */
     text-transform: uppercase;
+    letter-spacing: 20px;
     letter-spacing: 0.80px;
-    letter-spacing: .05rem;
-    padding: .2rem 4rem;
+    padding: .5rem 9rem;
 }
 
-.logo {
-    color: rgb(235, 223, 223)
+.site-logo {
+    font-family: 'Great Vibes', cursive;
+    font-size: 25px;
+    color: silver;
+    text-decoration: inherit;
 }
+
+
 
 header {
-	padding-top: 30px;
-	background-repeat: no-repeat;
-	background-size: cover;
+	/* padding-top: 300px; */
+	/* background-repeat: no-repeat; */
+    background-size: cover;
+    width: 100%;
 }
 
 .nav-list {
@@ -46,17 +53,18 @@ header {
     cursor: pointer;
 }
 
+
 .nav-link {
     font-family: 'Source Sans Pro', sans-serif;
+    font-size: 20px;
     display: block;
-    color: rgb(245, 231, 231);
-    padding: 15px;
-    /* color: inherit; */
+    color: rgb(165, 163, 163);
+    padding: 30px;
     text-decoration: inherit;
 }
 
 .nav-link:hover {
-    background-color: gold;
+    color: rgb(70, 84, 85);
 }
 
 

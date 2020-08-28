@@ -4,10 +4,9 @@ function Footer() {
     return (
         <footer>
             <div className="footer">
-
+                <p className="copyright">&copy;2020 </p>
             </div>
-            <p className="copyright">&copy;2020</p>
-            <p>social icons</p>
+            
         </footer>
     )
 }
