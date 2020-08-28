@@ -16,6 +16,7 @@ function Car (props) {
 
     return(
         <>
+        {/* <Like /> */}
             <div className="car-card" style={!list ? {margin: '0 auto'}: {}}>
                 {/* <Link  to={`/cars/{${car._id}}`}> */}
                     {/* <div className='car-card'> */}
@@ -33,8 +34,9 @@ function Car (props) {
                     <p><strong>Year</strong>{car.year}</p>
                     <p><strong>Model</strong>{car.model}</p>
                     <p><strong>Horsepower</strong>{car.horsepower}</p>
-                    <button className='like'>Like </button>
-                    <Link to={`/cars/${car._id}}/edit`} ><button className="edit">Edit</button></Link>
+                    {/* <button className='like'>Like </button> */}
+                    <Like />
+                    <Link to={`/cars/${car._id}/edit`} ><button className="edit">Edit</button></Link>
                     <button className='delete' onClick={handleDelete}>Delete</button>
                 </div>
             )}

@@ -15,7 +15,7 @@ class CarContainer extends React.Component {
                 console.log(result);
                 this.setState({car: result})
             })
-            .catch((err) => console.log(err))
+            .catch((err) => console.log(err));
     }
     
     render() {

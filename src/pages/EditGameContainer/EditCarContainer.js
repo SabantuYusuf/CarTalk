@@ -14,26 +14,36 @@ class EditCarContainer extends React.Component {
     // Get Car (by Id) to edit and update state
     componentDidMount() {
         CarModel.getCarById(this.props.match.params.id)
-            .then((result) => this.setState(result))
+            .then((result) => {
+                console.log(result);
+                this.setState(result)
+            })
             .catch((err) => console.log(err));
     }
 
     handleChange = (event) => {
         // console.log(event.target.id);
-        if (event.target.value === 'on') {
-            event.target.value = true;
-        }
+        // if (event.target.value === 'on') {
+        //     event.target.value = true;
+        // }
         this.setState({[event.target.name]: event.target.value})
     }
 
     // Submit updated car object to server to save in database
-    handleSubmit = (event) => {
+    handleSubmit = async (event) => {
         event.preventDefault();
-        CarModel.updateCar(this.state, this.props.match.params.id)
-            .then((result) =>{
-                console.log(result);
-            });
-        this.props.history.push(`/cars/${this.props.match.params.id}`);
+        console.log(this.state);
+        try {
+            const updatedCar = await CarModel.updateCar(this.state, this.props.match.params.id)
+
+            if (updatedCar) {
+                this.props.history.push(`/cars/${this.props.match.params.id}`);
+            }
+            
+        } catch (error) {
+            
+        }
+
     };
 
     render() {
@@ -44,7 +54,7 @@ class EditCarContainer extends React.Component {
                 <form onSubmit={this.handleSubmit}>
                     <h2>Edit Car</h2>
                         <label htmlFor="name">Photo</label>
-                        <input type="text" placeholder="car.carPhotoUrl" name="carPhotoUrl" id="carPhotoUrl" value={carPhotoUrl} onChange={this.handleChange} />
+                        <input type="text" name="carPhotoUrl" id="carPhotoUrl" value={carPhotoUrl} onChange={this.handleChange} />
                     <div>
                         <label htmlFor="name">Name</label>
                         <input type="text" name="name" id="name" value={name} onChange={this.handleChange} />

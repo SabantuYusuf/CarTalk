@@ -10,14 +10,14 @@ class CarModel {
     }
 
 
-    // Car show
+    // Car show: working
     static getCarById = (carId) => {
         return fetch(`${url}/${carId}`)
             .then((response) => response.json())
     }
 
 
-    // Add car
+    // Add car: working
     static createCar = (car, token) => {
         // console.log('this is the', token)
         // console.log('this is', token)
@@ -26,18 +26,10 @@ class CarModel {
 
     // Edit car
     static updateCar = (car, id) => {
-        return fetch(`${url}/${id}`, {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json',
-                'authorization': localStorage.getItem('token'),
-            },
-            body: JSON.stringify(car)
-        })
-        .then((response) => response.json())
+        return axios.put(`${url}/${id}/update`, car, {})
     }
 
-    // Delete car
+    // Delete car: working
     static deleteCar= (id) => {
         return axios.delete(`${url}/${id}`, {})
     }
