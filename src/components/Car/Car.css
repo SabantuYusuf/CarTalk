@@ -1,15 +1,10 @@
-.car-card {
-    /* background-color: rgba(0, 0, 0, 0.3); */
-    position: relative;
-    display: flex;
-    /* flex-direction: column; */
-    justify-content: center;
-    /* width: 300px;
-    height: 350px; */
-    /* margin-bottom: 30px; */
-    color: black;
-    transition: 0.1s linear;
-}
+
+.image-wrapper .car-card-action {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+} 
 
 .car-card:hover {
     transform: scale(1.09);
@@ -17,30 +12,17 @@
     
 }
 
-.image-wrapper {
-    /* width: 300px;
-    height: 350px; */
-    /* margin: 0 auto; */
-    position: absolute;
-    z-index: -1;
-    overflow: hidden;
-}
 
-.image-wrapper img {
-    /* width: 300px;
-    height: 350px; */
-    object-fit: cover;
-}
 
-.content-wrapper {
-    /* padding: 0 20px; */
-    text-align: center;
-    text-decoration: none;
-}
 
 .car-card-action {
+    color: silver;
     letter-spacing: 1.2px;
     text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    
 }
 
 
@@ -49,15 +31,17 @@
     letter-spacing: 1.2px;
     font-weight: 500;
     margin-top: 450px;
-    /* margin: 0 auto; */
+    margin: 0 auto;
     align-items: center; 
     color: inherit;
     text-decoration: inherit;
 }
 
 .name {
-    text-decoration: none;
-    color: inherit;
+    color: silver;
+    text-decoration: inherit;
+    font-size: 30px;
+    text-align: center;
     text-decoration: inherit;
 }
 
@@ -66,4 +50,8 @@
 .edit {
     text-align: center;
 
+}
+
+.car-card-action img {
+    align-content: center;
 }

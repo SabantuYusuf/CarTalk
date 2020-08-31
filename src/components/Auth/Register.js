@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import {  withRouter } from 'react-router-dom';
 import axios from 'axios';
 
+import './auth.css';
+
 class Register extends Component {
     state= {
         username: '',
@@ -34,7 +36,8 @@ class Register extends Component {
     render() {
         console.log(this.props);
         return (
-            <form onSubmit={this.handleSubmit}>
+            <form onSubmit={this.handleSubmit} className="auth-form">
+                <h2>Register</h2>
                 <div className="form-group">
                     <label htmlFor="username"> Username</label>
                     <input onChange={this.handleChange} type="text" id="username" name="username" value={this.state.username}/>

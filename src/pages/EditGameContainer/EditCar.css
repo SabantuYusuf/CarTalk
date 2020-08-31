@@ -1,0 +1,20 @@
+.editcar-input {
+    background-color: silver;
+	font-size: 30px;
+	word-spacing: .09cm;
+	text-align: center;
+	padding: 8px;
+	margin: 0 auto;
+    letter-spacing: 1.2px;
+    width: 80%;
+}
+
+h2 {
+    text-align: center;
+}
+
+.edit-form {
+    text-align: center;
+}
+
+

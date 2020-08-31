@@ -46,23 +46,23 @@ class NewCarContainer extends React.Component {
                 <form onSubmit={this.handleSubmit} className="car-form">
                     <h2>Add A New Car</h2>
                     <div>
-                        <label htmlFor="">Photo</label>
+                        <label htmlFor=""></label>
                         <input onInput={this.handleChange} type="text" name="carPhotoUrl" placeholder="Car Photo" className="newcar-input"/>
                     </div>
                     <div>
-                        <label htmlFor="">Name</label>
+                        <label htmlFor=""></label>
                         <input onInput={this.handleChange} type="text" name="name" placeholder="Name" className="newcar-input"/>
                     </div>
                     <div>
-                        <label htmlFor="">Year</label>
+                        <label htmlFor=""></label>
                         <input onInput={this.handleChange} type="text" name="year" placeholder="Year" className="newcar-input"/>
                     </div>
                     <div>
-                        <label htmlFor="">Model</label>
+                        <label htmlFor=""></label>
                         <input onInput={this.handleChange} type="text" name="model" placeholder="Car Model" className="newcar-input"/>
                     </div>
                     <div>
-                        <label htmlFor="">Horsepower</label>
+                        <label htmlFor=""></label>
                         <input onInput={this.handleChange} type="text" name="horsepower" placeholder="Horsepower" className="newcar-input"/>
                     </div>
                     <button type="submit">Add Car</button>

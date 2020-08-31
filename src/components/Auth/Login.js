@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import axios from 'axios';
 
+import './auth.css';
+
 class Login extends Component {
     state = {
         email: '',
@@ -33,10 +35,10 @@ class Login extends Component {
     render () {
         console.log(this.props);
         return (
-            <form onSubmit={this.handleSubmit}>
+            <form onSubmit={this.handleSubmit} className="login-form">
                 <div className="form-group">
                     <label htmlFor="email">Email</label>
-                    <input onChange={this.handleChange} type="email" id="email" name="email" value={this.state.email}/>
+                    <input onChange={this.handleChange} type="email" id="email" name="email" value={this.state.email} />
                 </div>
                 <div className="form-group">
                     <label htmlFor="password">Password</label>

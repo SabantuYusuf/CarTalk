@@ -7,7 +7,9 @@ function NavBar({ currentUser, logout }) {
     return (
         <nav>
             <div className="container">
+                <h4 className="site-logo">Car Talk</h4>
                 <NavLink className="logo" to='/'>
+                    
                     {/* <h1>Car</h1> */}
                 </NavLink>
                 <ul className='nav-list'>
